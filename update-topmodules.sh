@@ -28,7 +28,8 @@ for repo in $repos ; do
   [ $? -ne 0 ] && exit 4
   oldpwd=$PWD
   cd $path
-  git pull
+  git fetch
+  git checkout master
   [ $? -ne 0 ] && exit 5
   cd $oldpwd
   git commit -a -m "auto commit for changing sources"
